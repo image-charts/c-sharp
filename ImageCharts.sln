@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageChartsTest", "ImageChartsTest\ImageChartsTest.csproj", "{12973F40-8DEA-46C1-BCDA-2BD8249F33B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageChartsLib", "ImageChartsLib\ImageCharts.csproj", "{C2165577-B507-4251-9899-3ACCED5F5CC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12973F40-8DEA-46C1-BCDA-2BD8249F33B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12973F40-8DEA-46C1-BCDA-2BD8249F33B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12973F40-8DEA-46C1-BCDA-2BD8249F33B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12973F40-8DEA-46C1-BCDA-2BD8249F33B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{210EEAD0-0CFB-4C47-9D22-29546B0A7480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{210EEAD0-0CFB-4C47-9D22-29546B0A7480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{210EEAD0-0CFB-4C47-9D22-29546B0A7480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{210EEAD0-0CFB-4C47-9D22-29546B0A7480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2165577-B507-4251-9899-3ACCED5F5CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2165577-B507-4251-9899-3ACCED5F5CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2165577-B507-4251-9899-3ACCED5F5CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2165577-B507-4251-9899-3ACCED5F5CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABD9947B-8FBF-4084-971E-772D484BB32A}
+	EndGlobalSection
+EndGlobal
