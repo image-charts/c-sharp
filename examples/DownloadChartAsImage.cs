@@ -3,7 +3,7 @@ using ImageChartsLib;
 public class MainClass {
     static void Main(string[] args)
     {
-        String chartPath = "/tmp/chart.png";
+        string chartPath = "/tmp/chart.png";
 
         new ImageCharts()
                 .cht("bvg") // vertical bar chart

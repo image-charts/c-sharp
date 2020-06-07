@@ -1,7 +1,7 @@
 [![image charts c-sharp library logo](./logo.jpg)](#getting-started)
 
 <!-- TODO -->
-<!--[![Maven Central](http://img.shields.io/maven-central/v/com.image-charts/image-charts.svg?style=flat)](https://mvnrepository.com/artifact/com.image-charts/image-charts)-->
+[![Nuget](http://img.shields.io/nuget/v/ImageCharts.svg?style=flat)](https://www.nuget.org/packages/ImageCharts)
 <!--[![maintainability](https://api.codeclimate.com/v1/badges/8ae1208964cbea39150a/maintainability)](https://codeclimate.com/github/image-charts/java/maintainability)-->
 <!--[![test coverage](https://api.codeclimate.com/v1/badges/8ae1208964cbea39150a/test_coverage)](https://codeclimate.com/github/image-charts/java/test_coverage)-->
 
@@ -19,23 +19,23 @@ Embed them everywhere in emails, pdf reports, chat bots...!
 
 #### 1. Add Image-Charts to your project
 
-[![Maven Central](http://img.shields.io/maven-central/v/com.image-charts/image-charts.svg?style=flat)](https://mvnrepository.com/artifact/com.image-charts/image-charts)
+[![Nuget](http://img.shields.io/nuget/v/ImageCharts.svg?style=flat)](https://www.nuget.org/packages/ImageCharts)
 
-Requirements: .Net Core 2.0
+Requirements: .Net Core 2.1
 
-Maven:
-```xml
-<dependency>
-    <groupId>com.image-charts</groupId>
-    <artifactId>image-charts</artifactId>
-</dependency>
+Package Manager:
+```sh
+PM> Install-Package ImageCharts -Version VERSION
 ```
 
-Gradle:
-```gradle
-dependencies {
-implementation 'com.image-charts:image-charts:VERSION'
-}
+.NET CLI:
+```sh
+dotnet add package ImageCharts --version VERSION
+```
+
+PackageReference:
+```xml
+<PackageReference Include="ImageCharts" Version="5.2.0" />
 ```
 
 #### 2. Import Image-Charts library
@@ -210,7 +210,7 @@ using ImageChartsLib;
 public class MainClass {
     static void Main(string[] args)
     {
-        String chartPath = "/tmp/chart.png";
+        string chartPath = "/tmp/chart.png";
 
         new ImageCharts()
                 .cht("bvg") // vertical bar chart
