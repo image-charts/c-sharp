@@ -5,7 +5,7 @@
 <!--[![maintainability](https://api.codeclimate.com/v1/badges/8ae1208964cbea39150a/maintainability)](https://codeclimate.com/github/image-charts/java/maintainability)-->
 <!--[![test coverage](https://api.codeclimate.com/v1/badges/8ae1208964cbea39150a/test_coverage)](https://codeclimate.com/github/image-charts/java/test_coverage)-->
 
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/image-charts/c-sharp)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/release/nuget/ImageCharts)
 
 ![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/image-charts/c-sharp)
 
