@@ -1,4 +1,4 @@
-[![image charts c-sharp library logo](./logo.jpg)](#getting-started)
+<!--[![image charts c-sharp library logo](./logo.jpg)](#getting-started)-->
 
 <!-- TODO -->
 [![Nuget](http://img.shields.io/nuget/v/ImageCharts.svg?style=flat)](https://www.nuget.org/packages/ImageCharts)
@@ -74,39 +74,39 @@ pie.toBuffer(); // BufferedImage
     - __[toFile()](#tofile)__
     - __[toBuffer()](#tobuffer)__
     - __[toDataURI()](#todatauri)__
-        - __[cht(value) - Chart type](#cht)__
-        - __[chd(value) - chart data](#chd)__
-        - __[chds(value) - data format with custom scaling](#chds)__
-        - __[choe(value) - QRCode data encoding](#choe)__
-        - __[chld(value) - QRCode error correction level and optional margin](#chld)__
-        - __[chxr(value) - Axis data-range](#chxr)__
-        - __[chof(value) - Image output format](#chof)__
-        - __[chs(value) - Chart size (&lt;width&gt;x&lt;height&gt;)](#chs)__
-        - __[chdl(value) - Text for each series, to display in the legend](#chdl)__
-        - __[chdls(value) - Chart legend text and style](#chdls)__
-        - __[chg(value) - Solid or dotted grid lines](#chg)__
-        - __[chco(value) - series colors](#chco)__
-        - __[chtt(value) - chart title](#chtt)__
-        - __[chts(value) - chart title colors and font size](#chts)__
-        - __[chxt(value) - Display values on your axis lines or change which axes are shown](#chxt)__
-        - __[chxl(value) - Custom string axis labels on any axis](#chxl)__
-        - __[chxs(value) - Font size, color for axis labels, both custom labels and default label values](#chxs)__
-        - __[chm(value) - compound charts and line fills](#chm)__
-        - __[chls(value) - line thickness and solid/dashed style](#chls)__
-        - __[chl(value) - bar, pie slice, doughnut slice and polar slice chart labels](#chl)__
-        - __[chma(value) - chart margins](#chma)__
-        - __[chdlp(value) - Position of the legend and order of the legend entries](#chdlp)__
-        - __[chf(value) - Background Fills](#chf)__
-        - __[chan(value) - gif configuration](#chan)__
-        - __[chli(value) - doughnut chart inside label](#chli)__
-        - __[icac(value) - image-charts enterprise `account_id`](#icac)__
-        - __[ichm(value) - HMAC-SHA256 signature required to activate paid features](#ichm)__
-        - __[icff(value) - Default font family for all text from Google Fonts. Use same syntax as Google Font CSS API](#icff)__
-        - __[icfs(value) - Default font style for all text](#icfs)__
-        - __[iclocale(value) - localization (ISO 639-1)](#iclocale)__
-        - __[icretina(value) - retina mode](#icretina)__
-        - __[icqrb(value) - Background color for QR Codes](#icqrb)__
-        - __[icqrf(value) - Foreground color for QR Codes](#icqrf)__
+    - __[cht(value) - Chart type](#cht)__
+    - __[chd(value) - chart data](#chd)__
+    - __[chds(value) - data format with custom scaling](#chds)__
+    - __[choe(value) - QRCode data encoding](#choe)__
+    - __[chld(value) - QRCode error correction level and optional margin](#chld)__
+    - __[chxr(value) - Axis data-range](#chxr)__
+    - __[chof(value) - Image output format](#chof)__
+    - __[chs(value) - Chart size (&lt;width&gt;x&lt;height&gt;)](#chs)__
+    - __[chdl(value) - Text for each series, to display in the legend](#chdl)__
+    - __[chdls(value) - Chart legend text and style](#chdls)__
+    - __[chg(value) - Solid or dotted grid lines](#chg)__
+    - __[chco(value) - series colors](#chco)__
+    - __[chtt(value) - chart title](#chtt)__
+    - __[chts(value) - chart title colors and font size](#chts)__
+    - __[chxt(value) - Display values on your axis lines or change which axes are shown](#chxt)__
+    - __[chxl(value) - Custom string axis labels on any axis](#chxl)__
+    - __[chxs(value) - Font size, color for axis labels, both custom labels and default label values](#chxs)__
+    - __[chm(value) - compound charts and line fills](#chm)__
+    - __[chls(value) - line thickness and solid/dashed style](#chls)__
+    - __[chl(value) - bar, pie slice, doughnut slice and polar slice chart labels](#chl)__
+    - __[chma(value) - chart margins](#chma)__
+    - __[chdlp(value) - Position of the legend and order of the legend entries](#chdlp)__
+    - __[chf(value) - Background Fills](#chf)__
+    - __[chan(value) - gif configuration](#chan)__
+    - __[chli(value) - doughnut chart inside label](#chli)__
+    - __[icac(value) - image-charts enterprise `account_id`](#icac)__
+    - __[ichm(value) - HMAC-SHA256 signature required to activate paid features](#ichm)__
+    - __[icff(value) - Default font family for all text from Google Fonts. Use same syntax as Google Font CSS API](#icff)__
+    - __[icfs(value) - Default font style for all text](#icfs)__
+    - __[iclocale(value) - localization (ISO 639-1)](#iclocale)__
+    - __[icretina(value) - retina mode](#icretina)__
+    - __[icqrb(value) - Background color for QR Codes](#icqrb)__
+    - __[icqrf(value) - Foreground color for QR Codes](#icqrf)__
 
 ----------------------------------------------------------------------------------------------
 
