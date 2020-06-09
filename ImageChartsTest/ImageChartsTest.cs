@@ -12,6 +12,7 @@ namespace ImageChartsTest
     public class ImageChartsTest
     {
         private BindingFlags bindFlags = BindingFlags.Instance | BindingFlags.NonPublic;
+        private ImageCharts defaultBuilder = new ImageCharts(null, null, null, null, null, null);
 
         [TestMethod]
         public void toUrlWorks()
@@ -138,9 +139,7 @@ namespace ImageChartsTest
         [TestMethod]
         public void protocolExposeProtocol()
         {
-            ImageCharts builder = new ImageCharts(null, null, null, null, null, null);
-
-            Assert.AreEqual("https", typeof(ImageCharts).GetField("protocol", bindFlags).GetValue(builder).ToString());
+            Assert.AreEqual("https", typeof(ImageCharts).GetField("protocol", bindFlags).GetValue(defaultBuilder).ToString());
         }
 
         [TestMethod]
@@ -154,9 +153,7 @@ namespace ImageChartsTest
         [TestMethod]
         public void hostExposeHost()
         {
-            ImageCharts builder = new ImageCharts(null, null, null, null, null, null);
-
-            Assert.AreEqual("image-charts.com", typeof(ImageCharts).GetField("host", bindFlags).GetValue(builder).ToString());
+            Assert.AreEqual("image-charts.com", typeof(ImageCharts).GetField("host", bindFlags).GetValue(defaultBuilder).ToString());
         }
 
         [TestMethod]
@@ -170,9 +167,7 @@ namespace ImageChartsTest
         [TestMethod]
         public void pathnameExposePathname()
         {
-            ImageCharts builder = new ImageCharts(null, null, null, null, null, null);
-
-            Assert.AreEqual("/chart", typeof(ImageCharts).GetField("pathname", bindFlags).GetValue(builder).ToString());
+            Assert.AreEqual("/chart", typeof(ImageCharts).GetField("pathname", bindFlags).GetValue(defaultBuilder).ToString());
         }
 
         [TestMethod]
@@ -186,9 +181,7 @@ namespace ImageChartsTest
         [TestMethod]
         public void portExposePort()
         {
-            ImageCharts builder = new ImageCharts(null, null, null, null, null, null);
-
-            Assert.AreEqual(443, typeof(ImageCharts).GetField("port", bindFlags).GetValue(builder));
+            Assert.AreEqual(443, typeof(ImageCharts).GetField("port", bindFlags).GetValue(defaultBuilder));
         }
 
         [TestMethod]
