@@ -1,6 +1,6 @@
 using ImageChartsLib;
 
-public class MainClass {
+public class GenerateChartUrl {
     static void Main(string[] args)
     {
         string chartUrl = new ImageCharts()

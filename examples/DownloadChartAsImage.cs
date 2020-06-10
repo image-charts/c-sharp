@@ -1,6 +1,6 @@
 using ImageChartsLib;
 
-public class MainClass {
+public class DownloadChartAsImage {
     static void Main(string[] args)
     {
         string chartPath = "/tmp/chart.png";

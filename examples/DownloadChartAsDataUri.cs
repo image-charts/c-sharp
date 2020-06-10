@@ -1,6 +1,6 @@
 using ImageChartsLib;
 
-public class MainClass {
+public class DownloadChartAsDataUri {
     static void Main(string[] args)
     {
         string dataUri = new ImageCharts()

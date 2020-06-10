@@ -174,7 +174,7 @@ public ImageCharts(String protocol, String host, Integer port, String pathname, 
 ```c-sharp
 using ImageChartsLib;
 
-public class MainClass {
+public class GenerateChartUrl {
     static void Main(string[] args)
     {
         string chartUrl = new ImageCharts()
@@ -207,7 +207,7 @@ public class MainClass {
 ```c-sharp
 using ImageChartsLib;
 
-public class MainClass {
+public class DownloadChartAsImage {
     static void Main(string[] args)
     {
         string chartPath = "/tmp/chart.png";
@@ -240,7 +240,7 @@ public class MainClass {
 ```c-sharp
 using ImageChartsLib;
 
-public class MainClass {
+public class DownloadChartAsBuffer {
     static void Main(string[] args)
     {
         byte[] buffer = new ImageCharts()
@@ -270,7 +270,7 @@ public class MainClass {
 ```c-sharp
 using ImageChartsLib;
 
-public class MainClass {
+public class DownloadChartAsDataUri {
     static void Main(string[] args)
     {
         string dataUri = new ImageCharts()
@@ -309,7 +309,7 @@ Replace both values in the code example below:
 ```c-sharp
 using ImageChartsLib;
 
-public class MainClass {
+public class EnterpriseSignChart {
     static void Main(string[] args)
     {
         string chartUrl = new ImageCharts("SECRET_KEY")

@@ -1,6 +1,6 @@
 using ImageChartsLib;
 
-public class MainClass {
+public class EnterpriseSignChart {
     static void Main(string[] args)
     {
         string chartUrl = new ImageCharts("SECRET_KEY")

@@ -1,6 +1,6 @@
 using ImageChartsLib;
 
-public class MainClass {
+public class DownloadChartAsBuffer {
     static void Main(string[] args)
     {
         byte[] buffer = new ImageCharts()
