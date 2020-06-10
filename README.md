@@ -1,4 +1,4 @@
-<!--[![image charts c-sharp library logo](./logo.jpg)](#getting-started)-->
+[![official image charts C# library logo](./logo.jpg)](#getting-started)
 
 <!-- TODO -->
 [![Nuget](http://img.shields.io/nuget/v/ImageCharts.svg?style=flat)](https://www.nuget.org/packages/ImageCharts)
