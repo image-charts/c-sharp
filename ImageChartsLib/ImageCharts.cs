@@ -453,6 +453,21 @@ namespace ImageChartsLib
         }
         
         /**
+        * Bar corner radius. Display bars with rounded corner.
+        *
+        * Examples :
+    * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chbr("5");}
+    * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chbr("10");}
+        *
+        * @param chbr - Bar corner radius. Display bars with rounded corner.. 
+        * @return {ImageCharts}
+        * @see <a href="https://documentation.image-charts.com/bar-charts/#rounded-bar">Reference documentation</a>
+        */
+        public ImageCharts chbr(String chbr) {
+            return this.clone("chbr", chbr);
+        }
+        
+        /**
         * gif configuration
         *
         * Examples :
