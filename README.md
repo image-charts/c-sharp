@@ -94,6 +94,7 @@ pie.toBuffer(); // BufferedImage
     - __[chm(value) - compound charts and line fills](#chm)__
     - __[chls(value) - line thickness and solid/dashed style](#chls)__
     - __[chl(value) - bar, pie slice, doughnut slice and polar slice chart labels](#chl)__
+    - __[chlps(value) - Position and style of labels on data](#chlps)__
     - __[chma(value) - chart margins](#chma)__
     - __[chdlp(value) - Position of the legend and order of the legend entries](#chdlp)__
     - __[chf(value) - Background Fills](#chf)__
@@ -907,6 +908,32 @@ Other allowed values are: <pre>p | p3 | pc | pd | ls | lc | lxy | ls:nda | lc:nd
     <pre>.chl("multi
 line
 label1|label2")</pre>
+</a>
+
+- _[Back to Getting started](#getting-started)_
+- _[Back to ToC](#table-of-contents)_
+
+
+
+----------------------------------------------------------------------------------------------
+
+<a name="chlps"></a>
+#### `chlps( value )` : [`ImageCharts`](#constructor)
+
+> Position and style of labels on data
+
+> [Reference](https://documentation.image-charts.com/reference/chart-label/)
+
+
+
+##### Usage
+
+
+<a href="https://editor.image-charts.com/#https:/image-charts.com/chart?chd=a%3A30010%2C-30000%2C50000%2C80000%2C20000&chdl=Income&chf=b0%2Clg%2C90%2CEA469EFF%2C1%2C03A9F47C%2C0.4&chl=2014%7C2015%7C2016%7C2017%7C2018&chs=700x300&cht=bvs&chxt=y&chlps=align%2Ctop%7Coffset%2C10%7Ccolor%2CFF00FF" target="_blank">
+    <pre>.chlps("align,top|offset,10|color,FF00FF")</pre>
+</a>
+<a href="https://editor.image-charts.com/#https:/image-charts.com/chart?chd=a%3A30010%2C-30000%2C50000%2C80000%2C20000&chdl=Income&chf=b0%2Clg%2C90%2CEA469EFF%2C1%2C03A9F47C%2C0.4&chl=2014%7C2015%7C2016%7C2017%7C2018&chs=700x300&cht=bvs&chxt=y&chlps=align%2Ctop%7Coffset%2C10%7Ccolor%2CFF00FF" target="_blank">
+    <pre>.chlps("align,top|offset,10|color,FF00FF")</pre>
 </a>
 
 - _[Back to Getting started](#getting-started)_

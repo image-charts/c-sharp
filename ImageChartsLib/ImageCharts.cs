@@ -410,6 +410,21 @@ namespace ImageChartsLib
         }
         
         /**
+        * Position and style of labels on data
+        *
+        * Examples :
+    * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chlps("align,top|offset,10|color,FF00FF");}
+    * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chlps("align,top|offset,10|color,FF00FF");}
+        *
+        * @param chlps - Position and style of labels on data. 
+        * @return {ImageCharts}
+        * @see <a href="https://documentation.image-charts.com/reference/chart-label/">Reference documentation</a>
+        */
+        public ImageCharts chlps(String chlps) {
+            return this.clone("chlps", chlps);
+        }
+        
+        /**
         * chart margins
         *
         * Examples :
