@@ -922,7 +922,7 @@ label1|label2")</pre>
 
 > Position and style of labels on data
 
-> [Reference](https://documentation.image-charts.com/reference/chart-label/)
+> [Reference](https://documentation.image-charts.com/reference/chart-label/#positionning-and-formatting)
 
 
 
