@@ -324,14 +324,14 @@ public class EnterpriseSignChart {
             .icretina("1") // enable paid-only features like high-resolution charts
             .toURL(); // get the whole (HMAC signed) URL
 
-        Console.WriteLine(chartUrl); // https://image-charts.com:443/chart?icac=ACCOUNT_ID&cht=p3&chs=700x190&chd=t%3A60%2C40&chl=Hello%7CWorld&chf=ps0-0%2Clg%2C45%2Cffeb3b%2C0.2%2Cf44336%2C1%7Cps0-1%2Clg%2C45%2C8bc34a%2C0.2%2C009688%2C1&icretina=1&ichm=1ee43cfe0388b2c678e1810a44f81193ca246f0c76b93b2c85dfeea862c660dd
+        Console.WriteLine(chartUrl); // https://image-charts.com:443/chart?chd=t%3A60%2C40&chf=ps0-0%2Clg%2C45%2Cffeb3b%2C0.2%2Cf44336%2C1%7Cps0-1%2Clg%2C45%2C8bc34a%2C0.2%2C009688%2C1&chl=Hello%7CWorld&chs=700x190&cht=p3&icac=ACCOUNT_ID&icretina=1&ichm=122242bb700d825d69b3fafe4ec67193b45dcfe0ed93fcca307e0d0a84b73ea2
     }
 }
 
 ```
 
 <p align="center"><img
-            src="https://image-charts.com/chart?chd=t%3A60%2C40&chf=ps0-0%2Clg%2C45%2Cffeb3b%2C0.2%2Cf44336%2C1%7Cps0-1%2Clg%2C45%2C8bc34a%2C0.2%2C009688%2C1&chl=Hello%7CWorld&chs=700x190&cht=p3&icac=fgribreau&icretina=1&ichm=652f09953663bce161ac612af5f310f5abf7151b55337ef2a97e5e1cd559c8fb" />
+            src="https://image-charts.com/chart?chd=t%3A60%2C40&chf=ps0-0%2Clg%2C45%2Cffeb3b%2C0.2%2Cf44336%2C1%7Cps0-1%2Clg%2C45%2C8bc34a%2C0.2%2C009688%2C1&chl=Hello%7CWorld&chs=700x190&cht=p3&icac=documentation&icretina=1&ichm=122242bb700d825d69b3fafe4ec67193b45dcfe0ed93fcca307e0d0a84b73ea2" />
 </p>
 
 - _[Back to Getting started](#getting-started)_
