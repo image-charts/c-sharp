@@ -250,6 +250,8 @@ namespace ImageChartsLib
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chg("1,1");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chg("0,1,1,5");}
+    * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chg("1,1,FF00FF");}
+    * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chg("1,1,1,1,CECECE");}
         *
         * @param chg - Solid or dotted grid lines. 
         * @return {ImageCharts}
