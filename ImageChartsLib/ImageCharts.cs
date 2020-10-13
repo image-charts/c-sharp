@@ -675,7 +675,7 @@ namespace ImageChartsLib
             client.DefaultRequestHeaders.Add("User-Agent", "c-sharp-image-charts/1.0.0" + userAccount);
             HttpResponseMessage result = client.GetAsync(this.toURL()).Result;
 
-            // Cast to int because result.Status return HttpStatusCode enum 
+            // Cast to int because result.Status return HttpStatusCode enum
             int status = (int)result.StatusCode;
 
             if (status >= 200 && status < 300)
