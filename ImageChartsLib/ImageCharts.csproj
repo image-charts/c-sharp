@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>6.0.114</PackageVersion>
+    <PackageVersion>6.0.115</PackageVersion>
     <IsPackable>true</IsPackable>
     <Authors>Francois-Guillaume Ribreau</Authors>
     <Company>ImageCharts</Company>
