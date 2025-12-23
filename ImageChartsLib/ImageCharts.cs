@@ -683,8 +683,10 @@ namespace ImageChartsLib
                 return result.Content.ReadAsByteArrayAsync().Result;
             }
 
-            string validationMessage = result.Headers.GetValues("x-ic-error-validation").FirstOrDefault();
-            string validationCode = result.Headers.GetValues("x-ic-error-code").First();
+            IEnumerable<string> validationMessageValues;
+            IEnumerable<string> validationCodeValues;
+            string validationMessage = result.Headers.TryGetValues("x-ic-error-validation", out validationMessageValues) ? validationMessageValues.FirstOrDefault() : null;
+            string validationCode = result.Headers.TryGetValues("x-ic-error-code", out validationCodeValues) ? validationCodeValues.FirstOrDefault() : "HTTP_" + status;
             string message = "";
 
             if (!String.IsNullOrEmpty(validationMessage))

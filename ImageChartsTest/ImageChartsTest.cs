@@ -17,8 +17,8 @@ namespace ImageChartsTest
         [TestInitialize]
         public void WaitBetweenTests()
         {
-            // Add 500ms delay between tests to avoid 429 rate limiting
-            System.Threading.Thread.Sleep(500);
+            // Add 2000ms delay between tests to avoid 429 rate limiting
+            System.Threading.Thread.Sleep(2000);
         }
 
         [TestMethod]
