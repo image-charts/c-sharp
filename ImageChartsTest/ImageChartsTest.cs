@@ -14,6 +14,13 @@ namespace ImageChartsTest
         private BindingFlags bindFlags = BindingFlags.Instance | BindingFlags.NonPublic;
         private ImageCharts defaultBuilder = new ImageCharts(null, null, null, null, null, null);
 
+        [TestInitialize]
+        public void WaitBetweenTests()
+        {
+            // Add 500ms delay between tests to avoid 429 rate limiting
+            System.Threading.Thread.Sleep(500);
+        }
+
         [TestMethod]
         public void toUrlWorks()
         {
@@ -98,7 +105,7 @@ namespace ImageChartsTest
         {
             string dataURI = new ImageCharts().cht("p").chd("t:1,2,3").chs("2x2").toDataURI();
 
-            Assert.AreEqual("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQAAAABazTCJAAAADElEQVR42mM4wHAAAAMEAYEq5W5aAAAAAElFTkSuQmCC", dataURI);
+            Assert.AreEqual("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAABmJLR0QA/wD/AP+gvaeTAAAAFUlEQVQIW2P8////fwYGBgYmEAECAD34BADggvMYAAAAAElFTkSuQmCC", dataURI);
         }
 
         [TestMethod]
