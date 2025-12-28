@@ -14,6 +14,15 @@ namespace ImageChartsTest
         private BindingFlags bindFlags = BindingFlags.Instance | BindingFlags.NonPublic;
         private ImageCharts defaultBuilder = new ImageCharts(null, null, null, null, null, null);
 
+        // CI user-agent to bypass rate limiting (set in CI environment)
+        private static readonly string CI_USER_AGENT = Environment.GetEnvironmentVariable("IMAGE_CHARTS_USER_AGENT");
+
+        // Helper to create ImageCharts with CI user-agent if set
+        private ImageCharts CreateImageCharts()
+        {
+            return new ImageCharts(null, null, null, null, null, null, CI_USER_AGENT);
+        }
+
         [TestInitialize]
         public void WaitBetweenTests()
         {
@@ -63,7 +72,7 @@ namespace ImageChartsTest
         [ExpectedException(typeof(ImageChartsException), "\"\\\"chs\\\" is required\"")]
         public void toBufferRejectsIfChsNotDefined()
         {
-            new ImageCharts().cht("p").chd("t:1,2,3").toBuffer();
+            CreateImageCharts().cht("p").chd("t:1,2,3").toBuffer();
         }
 
         [TestMethod]
@@ -71,7 +80,7 @@ namespace ImageChartsTest
         public void toBufferRejectsIfIcacWithoutIchm()
         {
 
-            new ImageCharts().cht("p").chd("t:1,2,3").chs("100x100").icac("test_fixture").toBuffer();
+            CreateImageCharts().cht("p").chd("t:1,2,3").chs("100x100").icac("test_fixture").toBuffer();
 
         }
 
@@ -87,7 +96,7 @@ namespace ImageChartsTest
         [TestMethod]
         public void toBufferWorks()
         {
-            new ImageCharts()
+            CreateImageCharts()
                     .cht("p").chd("t:1,2,3").chs("100x100").toBuffer();
         }
 
@@ -96,14 +105,14 @@ namespace ImageChartsTest
         public void toDataURIRejectsIfChsNotDefined()
         {
 
-            new ImageCharts().cht("p").chd("t:1,2,3").toDataURI();
+            CreateImageCharts().cht("p").chd("t:1,2,3").toDataURI();
 
         }
 
         [TestMethod]
         public void toDataURIWorks()
         {
-            string dataURI = new ImageCharts().cht("p").chd("t:1,2,3").chs("2x2").toDataURI();
+            string dataURI = CreateImageCharts().cht("p").chd("t:1,2,3").chs("2x2").toDataURI();
 
             Assert.AreEqual("data:image/png;base64,iVBORw0K", dataURI.Substring(0, 30));
         }
@@ -111,7 +120,7 @@ namespace ImageChartsTest
         [TestMethod]
         public void toDataURISupportGifs()
         {
-            string dataURI = new ImageCharts().cht("p").chd("t:1,2,3").chan("100").chs("2x2").toDataURI();
+            string dataURI = CreateImageCharts().cht("p").chd("t:1,2,3").chan("100").chs("2x2").toDataURI();
 
             Assert.AreEqual("data:image/gif;base64,R0lGODlh", dataURI.Substring(0, 30));
         }
@@ -121,7 +130,7 @@ namespace ImageChartsTest
         public void toFileRejectsIfError()
         {
 
-            new ImageCharts().cht("p").chd("t:1,2,3").toFile("/tmp/chart.png");
+            CreateImageCharts().cht("p").chd("t:1,2,3").toFile("/tmp/chart.png");
 
         }
 
@@ -130,7 +139,7 @@ namespace ImageChartsTest
         public void toFileRejectsWhenInvalidPath()
         {
 
-            new ImageCharts().cht("p").chd("t:1,2,3").toFile("/__invalid_path/chart.png");
+            CreateImageCharts().cht("p").chd("t:1,2,3").toFile("/__invalid_path/chart.png");
 
         }
 
@@ -138,7 +147,7 @@ namespace ImageChartsTest
         public void toFileWorks()
         {
             string filePath = "/app/plop.png";
-            new ImageCharts().cht("p").chd("t:1,2,3").chan("100").chs("2x2").toFile(filePath);
+            CreateImageCharts().cht("p").chd("t:1,2,3").chan("100").chs("2x2").toFile(filePath);
 
             Assert.IsTrue(File.Exists(filePath));
         }

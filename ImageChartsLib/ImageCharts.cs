@@ -24,12 +24,13 @@ namespace ImageChartsLib
         private string protocol = "https";
         private int port = 443;
         private string pathname = "/chart";
+        private string userAgent;
         private Dictionary<string, Object> query = new Dictionary<string, Object>();
 
         /**
          * Free usage
          **/
-        public ImageCharts() : this(null, null, null, null, null)
+        public ImageCharts() : this(null, null, null, null, null, null, null)
         {
         }
 
@@ -47,7 +48,7 @@ namespace ImageChartsLib
         * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
         * @param timeout  Request timeout (in millisecond) when calling toBuffer() or toDataURI(). Default if null : 5000
         */
-        public ImageCharts(string secret, int? timeout) : this(null, null, null, null, secret, timeout)
+        public ImageCharts(string secret, int? timeout) : this(null, null, null, null, secret, timeout, null)
         {
         }
 
@@ -59,7 +60,7 @@ namespace ImageChartsLib
         * @param pathname  (On-Premise subscription only) custom pathname. Default if null "/chart"
         * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
         */
-        public ImageCharts(string protocol, string host, int? port, string pathname, string secret) : this(protocol, host, port, pathname, secret, null)
+        public ImageCharts(string protocol, string host, int? port, string pathname, string secret) : this(protocol, host, port, pathname, secret, null, null)
         {
         }
 
@@ -72,7 +73,21 @@ namespace ImageChartsLib
         * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
         * @param timeout  Request timeout (in millisecond) when calling toBuffer() or toDataURI(). Default if null : 5000
         */
-        public ImageCharts(string protocol, string host, int? port, string pathname, string secret, int? timeout)
+        public ImageCharts(string protocol, string host, int? port, string pathname, string secret, int? timeout) : this(protocol, host, port, pathname, secret, timeout, null)
+        {
+        }
+
+        /**
+        * Full constructor with custom user-agent
+        * @param protocol  (On-Premise subscription only) custom protocol. Default if null : "https"
+        * @param host  (Enterprise, Enterprise+ and On-Premise subscription only) custom domain. Default if null : "image-charts.com"
+        * @param port  (On-Premise subscription only) custom port. Default if null "443"
+        * @param pathname  (On-Premise subscription only) custom pathname. Default if null "/chart"
+        * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
+        * @param timeout  Request timeout (in millisecond) when calling toBuffer() or toDataURI(). Default if null : 5000
+        * @param userAgent  Custom user-agent string. Default : null (uses default library user-agent)
+        */
+        public ImageCharts(string protocol, string host, int? port, string pathname, string secret, int? timeout, string userAgent)
         {
             this.secret = secret;
             if (timeout != null) this.timeout = (int)timeout;
@@ -80,6 +95,7 @@ namespace ImageChartsLib
             if (protocol != null) this.protocol = protocol;
             if (port != null) this.port = (int)port;
             if (pathname != null) this.pathname = pathname;
+            this.userAgent = userAgent;
         }
 
         private ImageCharts clone(string key, Object value)
@@ -672,7 +688,8 @@ namespace ImageChartsLib
             HttpClient client = new HttpClient();
             client.Timeout = TimeSpan.FromMilliseconds(Convert.ToDouble(this.timeout));
             string userAccount = this.query.ContainsKey("icac") ? " (" + this.query["icac"] + ")" : "";
-            client.DefaultRequestHeaders.Add("User-Agent", "c-sharp-image-charts/1.0.0" + userAccount);
+            string effectiveUserAgent = this.userAgent != null ? this.userAgent : ("c-sharp-image-charts/1.0.0" + userAccount);
+            client.DefaultRequestHeaders.Add("User-Agent", effectiveUserAgent);
             HttpResponseMessage result = client.GetAsync(this.toURL()).Result;
 
             // Cast to int because result.Status return HttpStatusCode enum
