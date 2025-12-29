@@ -10,6 +10,6 @@
     <Copyright>MIT</Copyright>
     <RepositoryUrl>https://github.com/image-charts/c-sharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>front-end;backend-end;chart;charts;chart url;image;imagecharts;png;jpg;jpeg;gif;animated;api;pie;bar;horizontal-bar;bubble;doughnut;line;polar</PackageTags>
+    <PackageTags>front-end;backend-end;chart;charts;chart-url;image;imagecharts;png;jpg;jpeg;gif;animated;api;pie;bar;horizontal-bar;bubble;doughnut;line;polar</PackageTags>
   </PropertyGroup>
 </Project>
