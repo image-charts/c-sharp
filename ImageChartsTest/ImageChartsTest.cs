@@ -146,10 +146,12 @@ namespace ImageChartsTest
         [TestMethod]
         public void toFileWorks()
         {
-            string filePath = "/app/plop.png";
+            string filePath = Path.Combine(Path.GetTempPath(), "image-charts-test.png");
             CreateImageCharts().cht("p").chd("t:1,2,3").chan("100").chs("2x2").toFile(filePath);
 
             Assert.IsTrue(File.Exists(filePath));
+            // Cleanup
+            File.Delete(filePath);
         }
 
         [TestMethod]
