@@ -15,7 +15,7 @@ namespace ImageChartsTest
         private ImageCharts defaultBuilder = new ImageCharts(null, null, null, null, null, null);
 
         // CI user-agent to bypass rate limiting (set in CI environment)
-        private static readonly string CI_USER_AGENT = Environment.GetEnvironmentVariable("IMAGE_CHARTS_USER_AGENT");
+        private static readonly string? CI_USER_AGENT = Environment.GetEnvironmentVariable("IMAGE_CHARTS_USER_AGENT");
 
         // Helper to create ImageCharts with CI user-agent if set
         private ImageCharts CreateImageCharts()
@@ -157,7 +157,7 @@ namespace ImageChartsTest
         [TestMethod]
         public void protocolExposeProtocol()
         {
-            Assert.AreEqual("https", typeof(ImageCharts).GetField("protocol", bindFlags).GetValue(defaultBuilder).ToString());
+            Assert.AreEqual("https", typeof(ImageCharts).GetField("protocol", bindFlags)!.GetValue(defaultBuilder)!.ToString());
         }
 
         [TestMethod]
@@ -165,13 +165,13 @@ namespace ImageChartsTest
         {
             ImageCharts builder = new ImageCharts("http", null, null, null, null, null);
 
-            Assert.AreEqual("http", typeof(ImageCharts).GetField("protocol", bindFlags).GetValue(builder).ToString());
+            Assert.AreEqual("http", typeof(ImageCharts).GetField("protocol", bindFlags)!.GetValue(builder)!.ToString());
         }
 
         [TestMethod]
         public void hostExposeHost()
         {
-            Assert.AreEqual("image-charts.com", typeof(ImageCharts).GetField("host", bindFlags).GetValue(defaultBuilder).ToString());
+            Assert.AreEqual("image-charts.com", typeof(ImageCharts).GetField("host", bindFlags)!.GetValue(defaultBuilder)!.ToString());
         }
 
         [TestMethod]
@@ -179,13 +179,13 @@ namespace ImageChartsTest
         {
             ImageCharts builder = new ImageCharts(null, "on-premise-image-charts.com", null, null, null, null);
 
-            Assert.AreEqual("on-premise-image-charts.com", typeof(ImageCharts).GetField("host", bindFlags).GetValue(builder).ToString());
+            Assert.AreEqual("on-premise-image-charts.com", typeof(ImageCharts).GetField("host", bindFlags)!.GetValue(builder)!.ToString());
         }
 
         [TestMethod]
         public void pathnameExposePathname()
         {
-            Assert.AreEqual("/chart", typeof(ImageCharts).GetField("pathname", bindFlags).GetValue(defaultBuilder).ToString());
+            Assert.AreEqual("/chart", typeof(ImageCharts).GetField("pathname", bindFlags)!.GetValue(defaultBuilder)!.ToString());
         }
 
         [TestMethod]
@@ -193,13 +193,13 @@ namespace ImageChartsTest
         {
             ImageCharts builder = new ImageCharts(null, null, null, "/my-charts", null, null);
 
-            Assert.AreEqual("/my-charts", typeof(ImageCharts).GetField("pathname", bindFlags).GetValue(builder).ToString());
+            Assert.AreEqual("/my-charts", typeof(ImageCharts).GetField("pathname", bindFlags)!.GetValue(builder)!.ToString());
         }
 
         [TestMethod]
         public void portExposePort()
         {
-            Assert.AreEqual(443, typeof(ImageCharts).GetField("port", bindFlags).GetValue(defaultBuilder));
+            Assert.AreEqual(443, typeof(ImageCharts).GetField("port", bindFlags)!.GetValue(defaultBuilder));
         }
 
         [TestMethod]
@@ -207,7 +207,7 @@ namespace ImageChartsTest
         {
             ImageCharts builder = new ImageCharts(null, null, 8080, null, null, null);
 
-            Assert.AreEqual(8080, typeof(ImageCharts).GetField("port", bindFlags).GetValue(builder));
+            Assert.AreEqual(8080, typeof(ImageCharts).GetField("port", bindFlags)!.GetValue(builder));
         }
 
         [TestMethod]
@@ -215,9 +215,9 @@ namespace ImageChartsTest
         {
             ImageCharts builder = new ImageCharts();
 
-            FieldInfo protocolField = typeof(ImageCharts).GetField("query", bindFlags);
+            FieldInfo protocolField = typeof(ImageCharts).GetField("query", bindFlags)!;
 
-            Dictionary<string, Object> query = (Dictionary<string, Object>)protocolField.GetValue(builder);
+            Dictionary<string, Object> query = (Dictionary<string, Object>)protocolField.GetValue(builder)!;
             Assert.AreEqual(query.Count, 0);
         }
 
@@ -226,8 +226,8 @@ namespace ImageChartsTest
         {
             ImageCharts builder = new ImageCharts().cht("p").chd("t:1,2,3").icac("plop");
 
-            FieldInfo protocolField = typeof(ImageCharts).GetField("query", bindFlags);
-            Dictionary<string, Object> query = (Dictionary<string, Object>)protocolField.GetValue(builder);
+            FieldInfo protocolField = typeof(ImageCharts).GetField("query", bindFlags)!;
+            Dictionary<string, Object> query = (Dictionary<string, Object>)protocolField.GetValue(builder)!;
 
             Assert.AreEqual("p", query["cht"]);
             Assert.AreEqual("t:1,2,3", query["chd"]);

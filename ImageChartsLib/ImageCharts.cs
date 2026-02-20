@@ -18,13 +18,13 @@ namespace ImageChartsLib
     {
         private static Encoding DEFAULT_ENCODING = new UTF8Encoding();
 
-        private string secret;
+        private string? secret;
         private int timeout = 5000;
         private string host = "image-charts.com";
         private string protocol = "https";
         private int port = 443;
         private string pathname = "/chart";
-        private string userAgent;
+        private string? userAgent;
         private Dictionary<string, Object> query = new Dictionary<string, Object>();
 
         /**
@@ -39,7 +39,7 @@ namespace ImageChartsLib
         * Enterprise &amp; Enterprise+
         * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
         */
-        public ImageCharts(string secret) : this(secret, null)
+        public ImageCharts(string? secret) : this(secret, null)
         {
         }
 
@@ -48,7 +48,7 @@ namespace ImageChartsLib
         * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
         * @param timeout  Request timeout (in millisecond) when calling toBuffer() or toDataURI(). Default if null : 5000
         */
-        public ImageCharts(string secret, int? timeout) : this(null, null, null, null, secret, timeout, null)
+        public ImageCharts(string? secret, int? timeout) : this(null, null, null, null, secret, timeout, null)
         {
         }
 
@@ -60,7 +60,7 @@ namespace ImageChartsLib
         * @param pathname  (On-Premise subscription only) custom pathname. Default if null "/chart"
         * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
         */
-        public ImageCharts(string protocol, string host, int? port, string pathname, string secret) : this(protocol, host, port, pathname, secret, null, null)
+        public ImageCharts(string? protocol, string? host, int? port, string? pathname, string? secret) : this(protocol, host, port, pathname, secret, null, null)
         {
         }
 
@@ -73,7 +73,7 @@ namespace ImageChartsLib
         * @param secret  (Enterprise and Enterprise+ subscription only) SECRET_KEY. Default : null
         * @param timeout  Request timeout (in millisecond) when calling toBuffer() or toDataURI(). Default if null : 5000
         */
-        public ImageCharts(string protocol, string host, int? port, string pathname, string secret, int? timeout) : this(protocol, host, port, pathname, secret, timeout, null)
+        public ImageCharts(string? protocol, string? host, int? port, string? pathname, string? secret, int? timeout) : this(protocol, host, port, pathname, secret, timeout, null)
         {
         }
 
@@ -87,7 +87,7 @@ namespace ImageChartsLib
         * @param timeout  Request timeout (in millisecond) when calling toBuffer() or toDataURI(). Default if null : 5000
         * @param userAgent  Custom user-agent string. Default : null (uses default library user-agent)
         */
-        public ImageCharts(string protocol, string host, int? port, string pathname, string secret, int? timeout, string userAgent)
+        public ImageCharts(string? protocol, string? host, int? port, string? pathname, string? secret, int? timeout, string? userAgent)
         {
             this.secret = secret;
             if (timeout != null) this.timeout = (int)timeout;
@@ -702,8 +702,8 @@ namespace ImageChartsLib
 
             IEnumerable<string> validationMessageValues;
             IEnumerable<string> validationCodeValues;
-            string validationMessage = result.Headers.TryGetValues("x-ic-error-validation", out validationMessageValues) ? validationMessageValues.FirstOrDefault() : null;
-            string validationCode = result.Headers.TryGetValues("x-ic-error-code", out validationCodeValues) ? validationCodeValues.FirstOrDefault() : "HTTP_" + status;
+            string? validationMessage = result.Headers.TryGetValues("x-ic-error-validation", out validationMessageValues) ? validationMessageValues.FirstOrDefault() : null;
+            string? validationCode = result.Headers.TryGetValues("x-ic-error-code", out validationCodeValues) ? validationCodeValues.FirstOrDefault() : "HTTP_" + status;
             string message = "";
 
             if (!String.IsNullOrEmpty(validationMessage))
