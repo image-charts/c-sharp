@@ -5,7 +5,7 @@
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
     <WarningsAsErrors>nullable</WarningsAsErrors>
-    <PackageVersion>6.1.25</PackageVersion>
+    <PackageVersion>6.1.30</PackageVersion>
     <IsPackable>true</IsPackable>
     <Authors>Francois-Guillaume Ribreau</Authors>
     <Company>ImageCharts</Company>
