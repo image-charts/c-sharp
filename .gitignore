@@ -2,3 +2,7 @@
 **/obj
 **/TestResults
 plop.png
+node_modules/
+out/
+solution-src/
+*.tsbuildinfo
