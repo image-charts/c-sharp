@@ -69,28 +69,21 @@ namespace ImageChartsTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ImageChartsException), "\"\\\"chs\\\" is required\"")]
         public void toBufferRejectsIfChsNotDefined()
         {
-            CreateImageCharts().cht("p").chd("t:1,2,3").toBuffer();
+            Assert.ThrowsExactly<ImageChartsException>(() => { CreateImageCharts().cht("p").chd("t:1,2,3").toBuffer(); });
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ImageChartsException), "IC_MISSING_ENT_PARAMETER")]
         public void toBufferRejectsIfIcacWithoutIchm()
         {
-
-            CreateImageCharts().cht("p").chd("t:1,2,3").chs("100x100").icac("test_fixture").toBuffer();
-
+            Assert.ThrowsExactly<ImageChartsException>(() => { CreateImageCharts().cht("p").chd("t:1,2,3").chs("100x100").icac("test_fixture").toBuffer(); });
         }
 
         [TestMethod]
-        [ExpectedException(typeof(AggregateException))]
         public void toBufferRejectsIfTimeoutReached()
         {
-
-            new ImageCharts(null, null, null, null, null, 1)
-                    .cht("p").chd("t:1,2,3").chs("100x100").toBuffer();
+            Assert.ThrowsExactly<AggregateException>(() => { new ImageCharts(null, null, null, null, null, 1).cht("p").chd("t:1,2,3").chs("100x100").toBuffer(); });
         }
 
         [TestMethod]
@@ -101,12 +94,9 @@ namespace ImageChartsTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ImageChartsException), "\"\\\"chs\\\" is required\"")]
         public void toDataURIRejectsIfChsNotDefined()
         {
-
-            CreateImageCharts().cht("p").chd("t:1,2,3").toDataURI();
-
+            Assert.ThrowsExactly<ImageChartsException>(() => { CreateImageCharts().cht("p").chd("t:1,2,3").toDataURI(); });
         }
 
         [TestMethod]
@@ -126,21 +116,15 @@ namespace ImageChartsTest
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ImageChartsException), "\"\\\"chs\\\" is required\"")]
         public void toFileRejectsIfError()
         {
-
-            CreateImageCharts().cht("p").chd("t:1,2,3").toFile("/tmp/chart.png");
-
+            Assert.ThrowsExactly<ImageChartsException>(() => { CreateImageCharts().cht("p").chd("t:1,2,3").toFile("/tmp/chart.png"); });
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ImageChartsException), "\"\\\"chs\\\" is required\"")]
         public void toFileRejectsWhenInvalidPath()
         {
-
-            CreateImageCharts().cht("p").chd("t:1,2,3").toFile("/__invalid_path/chart.png");
-
+            Assert.ThrowsExactly<ImageChartsException>(() => { CreateImageCharts().cht("p").chd("t:1,2,3").toFile("/__invalid_path/chart.png"); });
         }
 
         [TestMethod]
