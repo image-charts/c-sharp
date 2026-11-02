@@ -124,7 +124,7 @@ namespace ImageChartsLib
         }
         
         /**
-        * chart data
+        * chart data. At most 1,000 series, chm line markers included, and 10,080 points in total.
         *
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chd("a:-100,200.5,75.55,110");}
@@ -132,7 +132,7 @@ namespace ImageChartsLib
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chd("s:BTb19_,Mn5tzb");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chd("e:BaPoqM2s,-A__RMD6");}
         *
-        * @param chd - chart data. 
+        * @param chd - chart data. At most 1,000 series, chm line markers included, and 10,080 points in total.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/data-format/">Reference documentation</a>
         */
@@ -238,7 +238,7 @@ namespace ImageChartsLib
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chdl("NASDAQ|FTSE100|DOW");}
         *
-        * @param chdl - Text for each series, to display in the legend. 
+        * @param chdl - Text for each series, to display in the legend. Each text between pipes holds at most 10,000 characters. The texts of chtt, chdl, chl and chxl hold at most 10,000 characters together that are not printable ASCII: accented letters, other scripts, emoji and line breaks.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/legend-text-and-style/">Reference documentation</a>
         */
@@ -261,7 +261,7 @@ namespace ImageChartsLib
         }
         
         /**
-        * Solid or dotted grid lines
+        * Solid or dotted grid lines. A dashed grid needs at least 1 pixel per dash or space on average.
         *
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chg("1,1");}
@@ -269,7 +269,7 @@ namespace ImageChartsLib
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chg("1,1,FF00FF");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chg("1,1,1,1,CECECE");}
         *
-        * @param chg - Solid or dotted grid lines. 
+        * @param chg - Solid or dotted grid lines. A dashed grid needs at least 1 pixel per dash or space on average.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/grid-lines/">Reference documentation</a>
         */
@@ -298,12 +298,12 @@ namespace ImageChartsLib
         }
         
         /**
-        * chart title
+        * chart title. Each text between pipes holds at most 10,000 characters. The texts of chtt, chdl, chl and chxl hold at most 10,000 characters together that are not printable ASCII: accented letters, other scripts, emoji and line breaks.
         *
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chtt("My beautiful chart");}
         *
-        * @param chtt - chart title. 
+        * @param chtt - chart title. Each text between pipes holds at most 10,000 characters. The texts of chtt, chdl, chl and chxl hold at most 10,000 characters together that are not printable ASCII: accented letters, other scripts, emoji and line breaks.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/chart-title/">Reference documentation</a>
         */
@@ -334,7 +334,7 @@ namespace ImageChartsLib
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chxt("x,x,y");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chxt("x,y,t,r,t");}
         *
-        * @param chxt - Display values on your axis lines or change which axes are shown. 
+        * @param chxt - Display values on your axis lines or change which axes are shown. At most 100 axes.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/chart-axis/#visible-axes">Reference documentation</a>
         */
@@ -349,7 +349,7 @@ namespace ImageChartsLib
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chxl("0:|Jan|July|Jan");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chxl("0:|Jan|July|Jan|1|10|20|30");}
         *
-        * @param chxl - Custom string axis labels on any axis. 
+        * @param chxl - Custom string axis labels on any axis. Each text between pipes holds at most 10,000 characters. The texts of chtt, chdl, chl and chxl hold at most 10,000 characters together that are not printable ASCII: accented letters, other scripts, emoji and line breaks.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/chart-axis/#custom-axis-labels">Reference documentation</a>
         */
@@ -368,7 +368,7 @@ namespace ImageChartsLib
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chxs("0N*p*per-month,0000FF");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chxs("0N*e*,000000|1N*cUSD*Mil,FF0000|2N*2sz*,0000FF");}
         *
-        * @param chxs - Font size, color for axis labels, both custom labels and default label values. 
+        * @param chxs - Font size, color for axis labels, both custom labels and default label values. At most 100 styles, one per axis. Each number format after N holds at most 10,000 characters. An axis draws its format at each tick: at most 60,000 characters over all axes. A character in a font larger than 14 pixels counts once per 14 pixels of font size.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/chart-axis/#axis-label-styles">Reference documentation</a>
         */
@@ -387,7 +387,7 @@ namespace ImageChartsLib
         * Examples :
 
         *
-        * @param chm - compound charts and line fills. 
+        * @param chm - compound charts and line fills. Each marker text holds at most 10,000 characters. The last N marker of a series draws its type and text at each point of the series: at most 60,000 characters over all series. Each label counts 20 characters on top of its text. A character in a font larger than 14 pixels counts once per 14 pixels of font size.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/compound-charts/">Reference documentation</a>
         */
@@ -396,13 +396,13 @@ namespace ImageChartsLib
         }
         
         /**
-        * line thickness and solid/dashed style
+        * line thickness and solid/dashed style. A dashed line needs at least 1 pixel per dash or space on average, and a line width at most 2 times its dash period. Dashed lines run through at most 1,000 points in total.
         *
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chls("10");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chls("3,6,3|5");}
         *
-        * @param chls - line thickness and solid/dashed style. 
+        * @param chls - line thickness and solid/dashed style. A dashed line needs at least 1 pixel per dash or space on average, and a line width at most 2 times its dash period. Dashed lines run through at most 1,000 points in total.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/line-charts/#line-styles">Reference documentation</a>
         */
@@ -419,7 +419,7 @@ namespace ImageChartsLib
 	* line
 	* label1|label2");}
         *
-        * @param chl - bar, pie slice, doughnut slice and polar slice chart labels. 
+        * @param chl - bar, pie slice, doughnut slice and polar slice chart labels. Each text between pipes holds at most 10,000 characters. The texts of chtt, chdl, chl and chxl hold at most 10,000 characters together that are not printable ASCII: accented letters, other scripts, emoji and line breaks. A QR code or a Graphviz chart reads chl as its data, without these limits. A Graphviz chart has its own limits on the DOT source: at most 50,000 characters and 6 levels of braces, 200 nodes and 400 edges. These engines take fewer: neato 70 nodes and 200 edges, twopi 70 nodes and 200 edges, osage 75 nodes and 200 edges, fdp 60 nodes and 200 edges, circo 55 nodes and 110 edges. These graph attributes take a plain decimal number: mclimit from 0 to 5; maxiter from 0 to 1,000; normalize from -100,000,000,000 to 100,000,000,000 (or true, false, yes, no); esep at least 0; dpi at least 0; resolution at least 0. A PNG of more than 16,000,000 pixels, a graph that draws more than 20,000 characters of text, or a line of more than 500 characters is refused: request the SVG output with `chof=.svg` to lift these three.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/chart-label/">Reference documentation</a>
         */
@@ -472,12 +472,12 @@ namespace ImageChartsLib
         }
         
         /**
-        * Background Fills
+        * Background Fills. At most 100 gradient stops over all fills.
         *
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chf("b0,lg,0,f44336,0.3,03a9f4,0.8");}
         *
-        * @param chf - Background Fills. Default : "bg,s,FFFFFF"
+        * @param chf - Background Fills. At most 100 gradient stops over all fills.. Default : "bg,s,FFFFFF"
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/reference/background-fill/">Reference documentation</a>
         */
@@ -516,13 +516,13 @@ namespace ImageChartsLib
         }
         
         /**
-        * doughnut chart inside label
+        * doughnut chart inside label. The inside label holds at most 3,000 characters.
         *
         * Examples :
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chli("95K€");}
     * {@code ImageCharts.Builder chart = new ImageCharts.Builder().chli("45%");}
         *
-        * @param chli - doughnut chart inside label. 
+        * @param chli - doughnut chart inside label. The inside label holds at most 3,000 characters.. 
         * @return {ImageCharts}
         * @see <a href="https://documentation.image-charts.com/pie-charts/#inside-label">Reference documentation</a>
         */
